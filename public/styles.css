@@ -2,6 +2,13 @@
   background-color: grey;
 }*/
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 #mapid {
   height: 500px;
+  width: 100%;
 }

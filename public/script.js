@@ -6,7 +6,11 @@ var here = "i'me here";
 console.log(here);
 
 var styles = {
-  
+  retrieve: $.ajax({
+    url: "https://opendatadev.arcgis.com/api/v2/sites/494"
+  }).done(function(data) {
+    console.log(data);
+  })
 };
 
 //////////////////////////////////////////////////////////

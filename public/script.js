@@ -2,15 +2,19 @@
 ///////       API CALL AND DOM MANIPULATION      /////////
 //////////////////////////////////////////////////////////
 
-var here = "i'me here";
-console.log(here);
+// var here = "i'me here";
+// console.log(here);
 
 var styles = {
+
+  mule: {
+
+  },
 
   retrieve: function() {
     var self = this;
     $.ajax({
-      url: "https://opendatadev.arcgis.com/api/v2/sites/494"
+      url: "https://opendatadev.arcgis.com/api/v2/sites/422"
     }).done(function(data) {
       console.log(data);
       self.extract(data);
@@ -18,13 +22,15 @@ var styles = {
   },
 
   extract: function(data) {
-    console.log("extract test");
-    var stylesheet = data.data.attributes.stylesheets.opendata.current;
-    console.log(stylesheet);
+    // console.log("extract test");
+    this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
+    console.log(this.mule.stylesheet);
   },
 
   apply: function () {
-
+    // console.log(mule.stylesheet);
+    console.log(this.mule.stylesheet);
+    $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
   }
 
 };

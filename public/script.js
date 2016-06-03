@@ -6,12 +6,33 @@ var here = "i'me here";
 console.log(here);
 
 var styles = {
-  retrieve: $.ajax({
-    url: "https://opendatadev.arcgis.com/api/v2/sites/494"
-  }).done(function(data) {
-    console.log(data);
-  })
+
+  retrieve: function() {
+    var self = this;
+    $.ajax({
+      url: "https://opendatadev.arcgis.com/api/v2/sites/494"
+    }).done(function(data) {
+      console.log(data);
+      self.extract(data);
+    });
+  },
+
+  extract: function(data) {
+    console.log("extract test");
+    var stylesheet = data.data.attributes.stylesheets.opendata.current;
+    console.log(stylesheet);
+  },
+
+  apply: function () {
+
+  }
+
 };
+
+styles.retrieve();
+
+
+
 
 //////////////////////////////////////////////////////////
 //////////////////       LEAFLET     /////////////////////

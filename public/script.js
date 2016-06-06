@@ -24,12 +24,17 @@ var styles = {
 
   apply: function () {
     console.log(this.mule.stylesheet);
+    $('.container').css('display', 'block');
     $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
   }
 
 };
 
 styles.retrieve();
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
 
 
 

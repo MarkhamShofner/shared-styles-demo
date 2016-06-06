@@ -2,13 +2,9 @@
 ///////       API CALL AND DOM MANIPULATION      /////////
 //////////////////////////////////////////////////////////
 
-// var here = "i'me here";
-// console.log(here);
-
 var styles = {
 
   mule: {
-
   },
 
   retrieve: function() {
@@ -22,13 +18,11 @@ var styles = {
   },
 
   extract: function(data) {
-    // console.log("extract test");
     this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
     console.log(this.mule.stylesheet);
   },
 
   apply: function () {
-    // console.log(mule.stylesheet);
     console.log(this.mule.stylesheet);
     $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
   }
@@ -36,7 +30,6 @@ var styles = {
 };
 
 styles.retrieve();
-
 
 
 

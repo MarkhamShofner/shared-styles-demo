@@ -1,6 +1,9 @@
 //////////////////////////////////////////////////////////
 ///////       API CALL AND DOM MANIPULATION      /////////
 //////////////////////////////////////////////////////////
+$(document).ready(function() {
+    console.log( "ready!" );
+});
 
 var styles = {
 
@@ -24,17 +27,32 @@ var styles = {
 
   apply: function () {
     console.log(this.mule.stylesheet);
-    $('.container').css('display', 'block');
+    $('body').css('display', 'block');
     $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
+  },
+
+  getUrlVars: function(){
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+      hash = hashes[i].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+    }
+    return vars;
+  },
+
+  getUrlVar: function(name){
+    return this.getUrlVars()[name];
   }
 
 };
 
 styles.retrieve();
+styles.apply();
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-});
+
 
 
 

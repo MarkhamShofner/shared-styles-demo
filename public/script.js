@@ -6,31 +6,27 @@ $(document).ready(function() {
 });
 
 var styles = {
-
   mule: {
   },
-
   retrieve: function() {
     var self = this;
     $.ajax({
-      url: "https://opendatadev.arcgis.com/api/v2/sites/422"
+      url: "https://opendatadev.arcgis.com/api/v2/sites/" + self.getUrlVar('site')
     }).done(function(data) {
       console.log(data);
       self.extract(data);
+      self.apply(data);
     });
   },
-
   extract: function(data) {
     this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
     console.log(this.mule.stylesheet);
   },
-
   apply: function () {
     console.log(this.mule.stylesheet);
     $('body').css('display', 'block');
     $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
   },
-
   getUrlVars: function(){
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -42,15 +38,13 @@ var styles = {
     }
     return vars;
   },
-
   getUrlVar: function(name){
     return this.getUrlVars()[name];
   }
-
 };
 
 styles.retrieve();
-styles.apply();
+
 
 
 
@@ -67,7 +61,6 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'shiftyshofner.okh88o37',
   accessToken: 'pk.eyJ1Ijoic2hpZnR5c2hvZm5lciIsImEiOiJjaW95amQ2eGowMXZudWZtNGh1dnZ0Z3F3In0.hsRaBxa8sODVT3Sl50E6cQ'
 }).addTo(mymap);
-
 
 //////////////////////////////////////////////////////////
 ///////////////////////    d3     ////////////////////////

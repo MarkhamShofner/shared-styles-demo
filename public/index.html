@@ -18,82 +18,43 @@
 
 <body>
   <!-- new test layout -->
-  <nav class = "navbar">
-    <div class = "container-fluid">
-    </div>
-  </nav>
 
-
-  <!-- intermediate test layout -->
-  <!-- <nav class="navbar">
-    <div class="container-fluid">
+  <nav class="navbar">
+    <div class="container">
+      <!-- header -->
       <div class="navbar-header">
         <a class="navbar-brand">
           <span class="esri-icon esri-icon-map-pin"></span>
         </a>
         <div class="navbar-title">
-          <a id="home-link" class="navbar-main-title text-overflow" href="/">
+          <a class="navbar-main-title" href="/">
             <h3>Shared Styles Demo Application</h3>
           </a>
-          <div class="navbar-sub-title text-overflow">This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</div>
+          <div class="navbar-sub-title">This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</div>
         </div>
       </div>
-      <form id="header-search-container" class="navbar-form navbar-right" role="search">
+      <!-- search -->
+      <form class="navbar-form navbar-right" role="search">
         <div class="input-group">
           <label class="sr-only" for="header-search">Search</label>
           <input type="search" name="header-search" id="header-search" class="form-control" placeholder="search">
           <span class="input-group-btn">
             <button id="header-search-btn" class="btn btn-default" type="button">
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
+            </button>
           </span>
         </div>
       </form>
     </div>
-  </nav> -->
+  </nav>
 
-
-  <!-- old layout -->
   <div class="container">
-    <!-- <div class="header bg-primary text-primary">
-      <form id="header-search-container" class="navbar-form navbar-right" role="search">
-        <div class="input-group">
-          <label class="sr-only" for="header-search">Search</label>
-          <input type="search" name="header-search" id="header-search" class="form-control" placeholder="search">
-          <span class="input-group-btn">
-              <button id="header-search-btn" class="btn btn-default" type="button">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </button>
-          </span>
-        </div>
-      </form>
-      <h3 class="text-muted"><a id="home-link" href="/">My Open Data</a></h3>
-    </div>
-
-    <nav class="navbar">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand">
-            <span class="esri-icon esri-icon-map-pin"></span>
-          </a>
-          <div class="navbar-title">
-            <div class="navbar-main-title text-overflow">Shared Styles Demo Application</div>
-            <div class="navbar-sub-title text-overflow">This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</div>
-          </div>
-        </div>
-      </div>
-    </nav> -->
-
-    <br>
-
-    <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff
-      seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut
-      phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
-
+    <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
+    <!-- d3 -->
     <svg id="visualisation" width="500" height="200"></svg>
-
+    <!-- leaflet -->
     <div id="mapid"></div>
-
+    <!-- footer -->
     <div class="footer">
       <div class="col-lg-12 col-md-12">
         <p style="float:left;">♥ from the <a href="http://dc.esri.com/">Open Data team</a></p>

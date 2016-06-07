@@ -10,8 +10,10 @@ var styles = {
   },
   retrieve: function() {
     var self = this;
+    var site = self.getUrlVar('site');
     $.ajax({
-      url: "https://opendatadev.arcgis.com/api/v2/sites/" + self.getUrlVar('site')
+      // call to url with site id extractive from URL. Use site 422 if no site id in URL.
+      url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "422")
     }).done(function(data) {
       console.log(data);
       self.extract(data);

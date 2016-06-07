@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title> Shared Styles Demo Page </title>
   <!-- TODO link rel="icon" href="/images/favicon.ico" -->
+  <!--  TODO potential other information up here viewport, etc...-->
   <meta name="description" content="example web page and docs to create my own shared-style page for hub-read apps">
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <!--TODO is below the use most updated js.arcgis?-->
@@ -29,8 +30,41 @@
 
 <body>
 
+<!-- new test layout -->
+
+<div class="header bg-primary text-primary">
+  <form id="header-search-container" class="navbar-form navbar-right" role="search">
+    <div class="input-group">
+      <label class="sr-only" for="header-search">Search</label>
+      <input type="search" name="header-search" id="header-search" class="form-control" placeholder="search">
+      <span class="input-group-btn">
+          <button id="header-search-btn" class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </button>
+      </span>
+    </div>
+  </form>
+  <h3 class="text-muted"><a id="home-link" href="/">My Open Data</a></h3>
+</div>
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">
+        <span class="esri-icon esri-icon-map-pin"></span>
+      </a>
+      <div class="navbar-title">
+        <div class="navbar-main-title text-overflow">Shared Styles Demo Application</div>
+        <div class="navbar-sub-title text-overflow">This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- old layout -->
   <div class="container">
-    <div class="header bg-primary text-primary">
+    <!-- <div class="header bg-primary text-primary">
       <form id="header-search-container" class="navbar-form navbar-right" role="search">
         <div class="input-group">
           <label class="sr-only" for="header-search">Search</label>
@@ -57,7 +91,7 @@
           </div>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
     <br>
 
@@ -74,6 +108,7 @@
     </div>
 
   </div>
+
   <script src="script.js"></script>
 </body>
 

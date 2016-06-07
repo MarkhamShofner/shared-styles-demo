@@ -1,6 +1,7 @@
 story-tracker.md
 old-story-tracker.md
 public/ghost.html
+public/pulled.sass
 
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt

@@ -5,23 +5,11 @@
   <meta charset="utf-8">
   <title> Shared Styles Demo Page </title>
   <!-- TODO link rel="icon" href="/images/favicon.ico" -->
-  <!--  TODO potential other information up here viewport, etc...-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="example web page and docs to create my own shared-style page for hub-read apps">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-  <!--TODO is below the use most updated js.arcgis?-->
-  <link rel="stylesheet" href="https://js.arcgis.com/4.0beta1/esri/css/esri.css">
-  <!--TODO site logo, images (pulled in from parent?)-->
-  <!--TODO mapping option (leaflet, arcgis substitute?)-->
-  <!--TODO d3?<script src="http://d3js.org/d3.v3.min.js" type="text/javascript"></script> -->
-  <!--TODO favicon?-->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-
-  <!--  -->
-  <!-- (unneeded, compiled in css url)<link href="http://esri.github.io/calcite-bootstrap/assets/css/calcite-bootstrap-open.min.css" rel="stylesheet"> -->
-
-  <!-- Calcite Maps <link rel="stylesheet" href="https://esri.github.io/calcite-maps/dist/css/calcite-maps-arcgis-4.x.min.css"> -->
-  <!-- ArcGIS JS 4.0 <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css"> -->
-  <!--TODO -->
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
@@ -29,37 +17,40 @@
 </head>
 
 <body>
-
-<!-- new test layout -->
-
-<div class="header bg-primary text-primary">
-  <form id="header-search-container" class="navbar-form navbar-right" role="search">
-    <div class="input-group">
-      <label class="sr-only" for="header-search">Search</label>
-      <input type="search" name="header-search" id="header-search" class="form-control" placeholder="search">
-      <span class="input-group-btn">
-          <button id="header-search-btn" class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-      </button>
-      </span>
+  <!-- new test layout -->
+  <nav class = "navbar">
+    <div class = "container-fluid">
     </div>
-  </form>
-  <h3 class="text-muted"><a id="home-link" href="/">My Open Data</a></h3>
-</div>
+  </nav>
 
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand">
-        <span class="esri-icon esri-icon-map-pin"></span>
-      </a>
-      <div class="navbar-title">
-        <div class="navbar-main-title text-overflow">Shared Styles Demo Application</div>
-        <div class="navbar-sub-title text-overflow">This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</div>
+
+  <!-- intermediate test layout -->
+  <!-- <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">
+          <span class="esri-icon esri-icon-map-pin"></span>
+        </a>
+        <div class="navbar-title">
+          <a id="home-link" class="navbar-main-title text-overflow" href="/">
+            <h3>Shared Styles Demo Application</h3>
+          </a>
+          <div class="navbar-sub-title text-overflow">This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</div>
+        </div>
       </div>
+      <form id="header-search-container" class="navbar-form navbar-right" role="search">
+        <div class="input-group">
+          <label class="sr-only" for="header-search">Search</label>
+          <input type="search" name="header-search" id="header-search" class="form-control" placeholder="search">
+          <span class="input-group-btn">
+            <button id="header-search-btn" class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          </button>
+          </span>
+        </div>
+      </form>
     </div>
-  </div>
-</nav>
+  </nav> -->
 
 
   <!-- old layout -->
@@ -95,7 +86,9 @@
 
     <br>
 
-    <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
+    <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff
+      seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut
+      phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
 
     <svg id="visualisation" width="500" height="200"></svg>
 

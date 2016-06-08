@@ -2,12 +2,11 @@
 ///////       API CALL AND DOM MANIPULATION      /////////
 //////////////////////////////////////////////////////////
 $(document).ready(function() {
-    console.log( "ready!" );
+  $.when(styles.retrieve()).then($('body').css('display', 'block'));
 });
 
 var styles = {
-  mule: {
-  },
+  mule: {},
   retrieve: function() {
     var self = this;
     var site = self.getUrlVar('site');
@@ -24,27 +23,26 @@ var styles = {
     this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
     console.log(this.mule.stylesheet);
   },
-  apply: function () {
-    $('body').css('display', 'block');
+  apply: function() {
     $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
   },
-  getUrlVars: function(){
-    var vars = [], hash;
+  getUrlVars: function() {
+    var vars = [],
+      hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
+    for (var i = 0; i < hashes.length; i++) {
       hash = hashes[i].split('=');
       vars.push(hash[0]);
       vars[hash[0]] = hash[1];
     }
     return vars;
   },
-  getUrlVar: function(name){
+  getUrlVar: function(name) {
     return this.getUrlVars()[name];
   }
 };
 
-styles.retrieve();
+
 
 
 

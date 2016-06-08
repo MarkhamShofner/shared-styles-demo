@@ -25,7 +25,6 @@ var styles = {
     console.log(this.mule.stylesheet);
   },
   apply: function () {
-    console.log(this.mule.stylesheet);
     $('body').css('display', 'block');
     $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
   },

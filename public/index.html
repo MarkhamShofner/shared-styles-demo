@@ -14,6 +14,7 @@
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,36 +47,49 @@
             </ul>
           </li>
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
     </div>
   </nav>
 
-  <div class="jumbotron">
-    <div class="container">
-      <h3>Shared Styles Demo Application</h3>
-      <p>This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</p>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <!-- d3 -->
-      <div class="col-md-6">
-        <svg id="visualisation" width="500" height="200"></svg>
+  <div class="container" role="main">
+    <div class="jumbotron">
+      <div class="container">
+        <h3>Shared Styles Demo Application</h3>
+        <p>This page serves as a demonstration of how a child page's styles can change based the chosen parent application.</p>
       </div>
+    </div>
+
+    <div class="page-header">
+      <h1>Text</h1>
+    </div>
+
+    <div class="row">
       <p class="col-md-6">Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff
         seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus mimbletonia Pigwidgeon knut
         phoenix feather other minister Azkaban. Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden forest grindylows wool socks.</p>
+      <!-- d3 -->
+      <div class="col-md-6">
+        <svg id="visualisation" width="450" height="200"></svg>
+      </div>
     </div>
-    <br>
+
+    <div class="page-header">
+      <h1>Buttons</h1>
+    </div>
+    <button type="button" class="btn btn-default">Default</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+
+    <div class="page-header">
+      <h1>Other Content</h1>
+    </div>
+    <p>The heart of the app (maps, images, etc...) can remain unaffected by css transfer, if desired.</p>
+
     <!-- leaflet -->
     <div id="mapid"></div>
-    <!-- footer -->
     <footer>
       <p style="float:left;">♥ from the <a href="http://dc.esri.com/">Open Data team</a></p>
     </footer>
   </div>
-
   <script src="script.js"></script>
 </body>
 

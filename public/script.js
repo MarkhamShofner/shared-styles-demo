@@ -2,7 +2,9 @@
 ///////       API CALL AND DOM MANIPULATION      /////////
 //////////////////////////////////////////////////////////
 $(document).ready(function() {
-  $.when(styles.retrieve()).then($('body').css('display', 'block'));
+  // styles.apply();
+  // $.when(styles.retrieve()).then($('body').css('display', 'block'));
+  styles.retrieve();
 });
 
 var styles = {
@@ -16,15 +18,16 @@ var styles = {
     }).done(function(data) {
       console.log(data);
       self.extract(data);
-      self.apply(data);
+      self.inject();
     });
   },
   extract: function(data) {
     this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
     console.log(this.mule.stylesheet);
   },
-  apply: function() {
+  inject: function() {
     $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
+    $('body').css('display', 'block');
   },
   getUrlVars: function() {
     var vars = [],

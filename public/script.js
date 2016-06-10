@@ -24,7 +24,7 @@ var styles = {
     var self = this;
     var site = self.getUrlVar('site');
     $.ajax({
-      // call to url with site id extractive from URL. Use site 562  if no site id in URL.
+      // call to API with extracted site id#. Use site 562  if no site id in URL.
       url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "562") + "?fields[sites]=stylesheets"
     }).done(function(data) {
       console.log(data);
@@ -41,9 +41,9 @@ var styles = {
   },
   display: function(name) {
     $('body').css('display', 'block');
-    // $('body').css('background-color', 'gray');
   }
 };
+
 
 
 

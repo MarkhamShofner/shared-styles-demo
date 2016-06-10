@@ -14,3 +14,49 @@ For now, this story aims to facilitate the incorporation of the "shared style" p
 - Item Listing
 - Structured License
 - etc...
+
+#### Walkthrough
+1. Clone this repo
+2. Run http-server from the directory (download http-server if you do not have it on your machine)
+3. Open up your locally hosted page and observe the example site
+
+```javascript
+var styles = {
+  mule: {},
+  getUrlVars: function() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+      hash = hashes[i].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+    }
+    return vars;
+  },
+  getUrlVar: function(name) {
+    return this.getUrlVars()[name];
+  },
+  retrieve: function() {
+    var self = this;
+    var site = self.getUrlVar('site');
+    $.ajax({
+      // call to API with extracted site id#. Use site 562  if no site id in URL.
+      url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "562") + "?fields[sites]=stylesheets"
+    }).done(function(data) {
+      console.log(data);
+      self.extract(data);
+      self.inject();
+    });
+  },
+  extract: function(data) {
+    this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
+    console.log(this.mule.stylesheet);
+  },
+  inject: function() {
+    $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
+  },
+  display: function(name) {
+    $('body').css('display', 'block');
+  }
+};
+```

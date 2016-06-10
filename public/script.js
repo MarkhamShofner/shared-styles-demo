@@ -3,35 +3,15 @@
 //////////////////////////////////////////////////////////
 $(document).ready(function() {
   // styles.apply();
-  // $.when(styles.retrieve()).then($('body').css('display', 'block'));
-  styles.retrieve();
+  $.when(styles.retrieve()).then($('body').css('display', 'block'));
+  // styles.retrieve();
+  // styles.retrieve().done(styles.display());
 });
 
 var styles = {
   mule: {},
-  retrieve: function() {
-    var self = this;
-    var site = self.getUrlVar('site');
-    $.ajax({
-      // call to url with site id extractive from URL. Use site 422 if no site id in URL.
-      url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "422")
-    }).done(function(data) {
-      console.log(data);
-      self.extract(data);
-      self.inject();
-    });
-  },
-  extract: function(data) {
-    this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
-    console.log(this.mule.stylesheet);
-  },
-  inject: function() {
-    $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
-    $('body').css('display', 'block');
-  },
   getUrlVars: function() {
-    var vars = [],
-      hash;
+    var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
     for (var i = 0; i < hashes.length; i++) {
       hash = hashes[i].split('=');
@@ -42,6 +22,32 @@ var styles = {
   },
   getUrlVar: function(name) {
     return this.getUrlVars()[name];
+  },
+  retrieve: function() {
+    // var r = $.Deferred();
+
+    var self = this;
+    var site = self.getUrlVar('site');
+    $.ajax({
+      // call to url with site id extractive from URL. Use site 422 if no site id in URL.
+      url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "422")
+    }).done(function(data) {
+      console.log(data);
+      self.extract(data);
+      self.inject();
+    });
+
+    // return r;
+  },
+  extract: function(data) {
+    this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
+    console.log(this.mule.stylesheet);
+  },
+  inject: function() {
+    $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
+  },
+  display: function(name) {
+    $('body').css('display', 'block');
   }
 };
 

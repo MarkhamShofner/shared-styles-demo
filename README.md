@@ -5,23 +5,13 @@
 ### Concept
 The idea is to create an explanation mechanism that clarifies the shared-style component of hub-ready apps. An example app and attached docs will allow internal Esri developers (and eventually Citizens) to create hub-ready applications, whether they are starting from scratch or looking to make an existing app hub-ready.
 
-##### Clarification on Hub-Ready apps
-See https://github.com/ArcGIS/Hub and https://github.com/ArcGIS/Hub/blob/master/specification.md.
-For now, this story aims to facilitate the incorporation of the "shared style" portion of hub-ready apps. Other major components of hub-ready apps (that can be addressed down the line in other stories) include:
-- Schema matching
-- Link apps to data
-- Category Ontology
-- Item Listing
-- Structured License
-- etc...
-
-##### Walkthrough
-- to observe the example site
+### Walkthrough
+#### to observe the example site
 1. Clone this repo
 2. Run http-server from the directory (download http-server if you do not have it on your machine)
 3. Open up your locally hosted page and observe the example site, adding "/?site=562" (or any applicable site id # to observe changes. 563, 564, 565 should all work.)
 
-- to include
+#### to include
 4. Incorporate the below styles object in your JavaScript.
 
 ```javascript
@@ -71,3 +61,13 @@ styles.retrieve())
 ```
 
 6. Set related DOM elements (navbars, h1s, ps, buttons, etc...) to observe the incorporated changes. See the example page for more information.
+
+### Clarification on Hub-Ready apps
+See https://github.com/ArcGIS/Hub and https://github.com/ArcGIS/Hub/blob/master/specification.md.
+For now, this story aims to facilitate the incorporation of the "shared style" portion of hub-ready apps. Other major components of hub-ready apps (that can be addressed down the line in other stories) include:
+- Schema matching
+- Link apps to data
+- Category Ontology
+- Item Listing
+- Structured License
+- etc...

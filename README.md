@@ -15,10 +15,14 @@ For now, this story aims to facilitate the incorporation of the "shared style" p
 - Structured License
 - etc...
 
-#### Walkthrough
+##### Walkthrough
+- to observe the example site
 1. Clone this repo
 2. Run http-server from the directory (download http-server if you do not have it on your machine)
-3. Open up your locally hosted page and observe the example site
+3. Open up your locally hosted page and observe the example site, adding "/?site=562" (or any applicable site id # to observe changes. 563, 564, 565 should all work.)
+
+- to include
+4. Incorporate the below styles object in your JavaScript.
 
 ```javascript
 var styles = {
@@ -60,3 +64,10 @@ var styles = {
   }
 };
 ```
+
+5. Call the retrieve function, which makes a call to a specific parent site id's data (based on the id # identified in the URL e.g. "/?site=562" ), and then applies that site's compiled css to your page.
+```javascript
+styles.retrieve())
+```
+
+6. Set related DOM elements (navbars, h1s, ps, buttons, etc...) to observe the incorporated changes. See the example page for more information.

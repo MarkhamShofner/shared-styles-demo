@@ -2,10 +2,7 @@
 ///////       API CALL AND DOM MANIPULATION      /////////
 //////////////////////////////////////////////////////////
 $(document).ready(function() {
-  // styles.apply();
-  $.when(styles.retrieve()).then($('body').css('display', 'block'));
-  // styles.retrieve();
-  // styles.retrieve().done(styles.display());
+  $.when(styles.retrieve()).done(styles.display());
 });
 
 var styles = {
@@ -48,12 +45,9 @@ var styles = {
   },
   display: function(name) {
     $('body').css('display', 'block');
+    $('body').css('background-color', 'gray');
   }
 };
-
-
-
-
 
 
 

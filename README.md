@@ -81,20 +81,20 @@ e.g. - http://127.0.0.1:8080/?site=562
   ```
   can be changed to end in "?site=564" instead of "?site=562", and your site will now have the look and feel of site 564.
 
-6. Should you want to permanently set your page's css to match a single parent site, go to the ajax call within the 'styles' object
-```javascript
-$.ajax({
-  // call to API with extracted site id#. Use site 562  if no site id in URL.
-  url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "562") + "?fields[sites]=stylesheets"
-})
-```
-and change (site ? site: "562") to "###" where ### is the chosen side id #. for example -
-```javascript
-$.ajax({
-  // call to API with extracted site id#. Use site 562  if no site id in URL.
-  url: "https://opendatadev.arcgis.com/api/v2/sites/" + "564" + "?fields[sites]=stylesheets"
-})
-```
+6. Should you want to permanently set your page's css to match a single parent site (instead of changing based on the current URL), go to the ajax call within the 'styles' object
+  ```javascript
+  $.ajax({
+    // call to API with extracted site id#. Use site 562  if no site id in URL.
+    url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "562") + "?fields[sites]=stylesheets"
+  })
+  ```
+  and modify (site ? site: "562") to "###" where ### is the chosen side id #. for example, to set the css to match site 564's -
+  ```javascript
+  $.ajax({
+    // call to API with extracted site id#. Use site 562  if no site id in URL.
+    url: "https://opendatadev.arcgis.com/api/v2/sites/" + "564" + "?fields[sites]=stylesheets"
+  })
+  ```
 
 ### Clarification on Hub-Ready apps
 See https://github.com/ArcGIS/Hub and https://github.com/ArcGIS/Hub/blob/master/specification.md.

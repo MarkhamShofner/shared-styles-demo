@@ -16,7 +16,18 @@ e.g. - http://127.0.0.1:8080/?site=562
 #### Create your own
 1. Either use your existing file structure, or create a new application (with at least index.html and script.js files).
 
-2. Incorporate the below styles object in your JavaScript.
+2. Set related DOM elements (navbars, h1s, ps, buttons, etc...). The below are just a few examples of DOM elements that will likely change based on input parent site id #.
+  ```html
+  <body>
+    <navbar><h1>Big header</h1></navbar>
+    <h3>Smaller header</h3>
+    <p>With any text.</p>
+    <button type="button" class="btn btn-default">Default</button>
+    <button type="button" class="btn btn-primary">Primary</button>
+  </body>
+  ```
+
+3. Incorporate the below styles object in your JavaScript.
 
   ```javascript
   var styles = {
@@ -59,27 +70,16 @@ e.g. - http://127.0.0.1:8080/?site=562
   };
   ```
 
-3. Set related DOM elements (navbars, h1s, ps, buttons, etc...). The below are just a few examples of DOM elements that will likely change based on input parent site id #.
-  ```html
-  <body>
-  <navbar><h1>Big header</h1></navbar>
-  <h3>Smaller header</h3>
-  <p>With any text.</p>
-  <button type="button" class="btn btn-default">Default</button>
-  <button type="button" class="btn btn-primary">Primary</button>
-  </body>
-```
-
 4. Call the retrieve function, which makes a call to a specific parent site id's data (based on the id # identified in the URL e.g. "/?site=562" ), and then applies that site's compiled css to your page.
-```javascript
-styles.retrieve())
-```
+  ```javascript
+  styles.retrieve())
+  ```
 
 5. Fiddle with the URL and observe changing styles based on called parent site id #s. For example, by changing the string at the end of your URL, something like -
-```
-http://127.0.0.1:8080/?site=562
-```
-can be changed to end in "?site=564" instead of "?site=562", and the site will now have the look and feel of site 564.
+  ```
+  http://127.0.0.1:8080/?site=562
+  ```
+  can be changed to end in "?site=564" instead of "?site=562", and the site will now have the look and feel of site 564.
 
 ### Clarification on Hub-Ready apps
 See https://github.com/ArcGIS/Hub and https://github.com/ArcGIS/Hub/blob/master/specification.md.

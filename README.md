@@ -1,7 +1,5 @@
 # Shared Style Demo
 
-**As a user (developer) I can can follow example web page and docs to create my own shared-style page**
-
 ### Concept
 The idea is to create an explanation mechanism that clarifies the shared-style component of hub-ready apps. An example app and attached docs will allow internal Esri developers (and eventually Citizens) to create hub-ready applications, whether they are starting from scratch or looking to make an existing app hub-ready.
 
@@ -9,7 +7,7 @@ The idea is to create an explanation mechanism that clarifies the shared-style c
 #### to observe the example site
 1. Clone this repo
 2. Run http-server from the directory (download http-server if you do not have it on your machine)
-3. Open up your locally hosted page and observe the example site, adding "/?site=562" (or any applicable site id # to observe changes. 563, 564, 565 should all work.)
+3. Open up your locally hosted page and observe the example site, adding "/?site=562" (or any applicable site id # to observe changes. 562 (default), 563 (google), 564 (Los Angeles), 565 (Charlotte), 566 (ugly pumpkin) should all work.)
 
 #### to include
 4. Incorporate the below styles object in your JavaScript.

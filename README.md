@@ -16,10 +16,10 @@ e.g. - http://127.0.0.1:8080/?site=562
 #### Create your own
 1. Either use your existing file structure, or create a new application (with at least index.html and script.js files).
 
-2. Set related DOM elements (navbars, h1s, ps, buttons, etc...). The below are just a few examples of DOM elements that will likely change based on input parent site id #.
+2. Set related DOM elements (navbars, h1s, ps, buttons, etc...). The below are just a few examples of DOM elements that can change based on the chosen parent site id #.
   ```html
   <body>
-    <navbar><h1>Big header</h1></navbar>
+    <navbar><h1>Bigger header</h1></navbar>
     <h3>Smaller header</h3>
     <p>With any text.</p>
     <button type="button" class="btn btn-default">Default</button>
@@ -27,7 +27,7 @@ e.g. - http://127.0.0.1:8080/?site=562
   </body>
   ```
 
-3. Incorporate the below styles object in your JavaScript.
+3. Incorporate the below 'styles' object in your JavaScript.
 
   ```javascript
   var styles = {
@@ -79,17 +79,26 @@ e.g. - http://127.0.0.1:8080/?site=562
   ```
   http://127.0.0.1:8080/?site=562
   ```
-  can be changed to end in "?site=564" instead of "?site=562", and the site will now have the look and feel of site 564.
+  can be changed to end in "?site=564" instead of "?site=562", and your site will now have the look and feel of site 564.
+
+6. Should you want to permanently set your page's css to match a single parent site, go to the ajax call within the 'styles' object
+```javascript
+$.ajax({
+  // call to API with extracted site id#. Use site 562  if no site id in URL.
+  url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "562") + "?fields[sites]=stylesheets"
+})
+```
+and change (site ? site: "562") to "###" where ### is the chosen side id #. for example -
+```javascript
+$.ajax({
+  // call to API with extracted site id#. Use site 562  if no site id in URL.
+  url: "https://opendatadev.arcgis.com/api/v2/sites/" + "564" + "?fields[sites]=stylesheets"
+})
+```
 
 ### Clarification on Hub-Ready apps
 See https://github.com/ArcGIS/Hub and https://github.com/ArcGIS/Hub/blob/master/specification.md.
-For now, this story aims to facilitate the incorporation of the "shared style" portion of hub-ready apps. Other major components of hub-ready apps (that can be addressed down the line in other stories) include:
-- Schema matching
-- Link apps to data
-- Category Ontology
-- Item Listing
-- Structured License
-- etc...
+The repo aims to facilitate the incorporation of the "shared style" portion of hub-ready apps. Other major components of hub-ready apps (that can be addressed down the line in other repos) include: Schema matching, Link apps to data, Category Ontology, Item Listing, Structured License, etc...
 
 ### Contact
 Please reach out to mshofner@esri.com, should you have any questions around this shared-styling demo.

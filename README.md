@@ -9,52 +9,58 @@ The purpose of this repo is to streamline the process for developers to inherit 
 1. Clone this repo
 2. Run http-server from the directory (download http-server if you do not have it on your machine)
 3. Open up your locally hosted page and observe the example site, adding "/?site=562" (or any applicable site id # to observe changes). 562 (default), 563 (google), 564 (Los Angeles), 565 (Charlotte), 566 (ugly pumpkin) should all work.
-
-#### Create your own
-4. Incorporate the below styles object in your JavaScript.
-
-```javascript
-var styles = {
-  mule: {},
-  getUrlVars: function() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for (var i = 0; i < hashes.length; i++) {
-      hash = hashes[i].split('=');
-      vars.push(hash[0]);
-      vars[hash[0]] = hash[1];
-    }
-    return vars;
-  },
-  getUrlVar: function(name) {
-    return this.getUrlVars()[name];
-  },
-  retrieve: function() {
-    var self = this;
-    var site = self.getUrlVar('site');
-    $.ajax({
-      // call to API with extracted site id#. Use site 562  if no site id in URL.
-      url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "562") + "?fields[sites]=stylesheets"
-    }).done(function(data) {
-      console.log(data);
-      self.extract(data);
-      self.inject();
-    });
-  },
-  extract: function(data) {
-    this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
-    console.log(this.mule.stylesheet);
-  },
-  inject: function() {
-    $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
-  },
-  display: function(name) {
-    $('body').css('display', 'block');
-  }
-};
+e.g.
+```
+http://127.0.0.1:8080/?site=562
 ```
 
-5. Set related DOM elements (navbars, h1s, ps, buttons, etc...) to observe the incorporated changes. The below are just a few examples of DOM elements that will likely change based on input parent site id #.
+#### Create your own
+4. Either use your existing file structure, or create a new application (with at least index.html and script.js files).
+
+5. Incorporate the below styles object in your JavaScript.
+
+  ```javascript
+  var styles = {
+    mule: {},
+    getUrlVars: function() {
+      var vars = [], hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+      }
+      return vars;
+    },
+    getUrlVar: function(name) {
+      return this.getUrlVars()[name];
+    },
+    retrieve: function() {
+      var self = this;
+      var site = self.getUrlVar('site');
+      $.ajax({
+        // call to API with extracted site id#. Use site 562  if no site id in URL.
+        url: "https://opendatadev.arcgis.com/api/v2/sites/" + (site ? site : "562") + "?fields[sites]=stylesheets"
+      }).done(function(data) {
+        console.log(data);
+        self.extract(data);
+        self.inject();
+      });
+    },
+    extract: function(data) {
+      this.mule.stylesheet = data.data.attributes.stylesheets.opendata.current;
+      console.log(this.mule.stylesheet);
+    },
+    inject: function() {
+      $('head').append('<link rel="stylesheet" href=' + this.mule.stylesheet + ' type="text/css" />');
+    },
+    display: function(name) {
+      $('body').css('display', 'block');
+    }
+  };
+  ```
+
+5. Set related DOM elements (navbars, h1s, ps, buttons, etc...). The below are just a few examples of DOM elements that will likely change based on input parent site id #.
 ```html
 <body>
 <navbar><h1>Big header</h1></navbar>

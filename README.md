@@ -9,15 +9,14 @@ The purpose of this repo is to streamline the process for developers to inherit 
 1. Clone this repo
 2. Run http-server from the directory (download http-server if you do not have it on your machine)
 3. Open up your locally hosted page and observe the example site, adding "/?site=562" (or any applicable site id # to observe changes). 562 (default), 563 (google), 564 (Los Angeles), 565 (Charlotte), 566 (ugly pumpkin) should all work.
-e.g.
 ```
-http://127.0.0.1:8080/?site=562
+e.g. - http://127.0.0.1:8080/?site=562
 ```
 
 #### Create your own
-4. Either use your existing file structure, or create a new application (with at least index.html and script.js files).
+1. Either use your existing file structure, or create a new application (with at least index.html and script.js files).
 
-5. Incorporate the below styles object in your JavaScript.
+2. Incorporate the below styles object in your JavaScript.
 
   ```javascript
   var styles = {
@@ -60,23 +59,23 @@ http://127.0.0.1:8080/?site=562
   };
   ```
 
-5. Set related DOM elements (navbars, h1s, ps, buttons, etc...). The below are just a few examples of DOM elements that will likely change based on input parent site id #.
-```html
-<body>
-<navbar><h1>Big header</h1></navbar>
-<h3>Smaller header</h3>
-<p>With any text.</p>
-<button type="button" class="btn btn-default">Default</button>
-<button type="button" class="btn btn-primary">Primary</button>
-</body>
+3. Set related DOM elements (navbars, h1s, ps, buttons, etc...). The below are just a few examples of DOM elements that will likely change based on input parent site id #.
+  ```html
+  <body>
+  <navbar><h1>Big header</h1></navbar>
+  <h3>Smaller header</h3>
+  <p>With any text.</p>
+  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-primary">Primary</button>
+  </body>
 ```
 
-6. Call the retrieve function, which makes a call to a specific parent site id's data (based on the id # identified in the URL e.g. "/?site=562" ), and then applies that site's compiled css to your page.
+4. Call the retrieve function, which makes a call to a specific parent site id's data (based on the id # identified in the URL e.g. "/?site=562" ), and then applies that site's compiled css to your page.
 ```javascript
 styles.retrieve())
 ```
 
-7. Fiddle with the URL and observe changing styles based on called parent site id #s. For example, by changing the string at the end of your URL, something like -
+5. Fiddle with the URL and observe changing styles based on called parent site id #s. For example, by changing the string at the end of your URL, something like -
 ```
 http://127.0.0.1:8080/?site=562
 ```

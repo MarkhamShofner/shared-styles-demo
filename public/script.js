@@ -8,7 +8,8 @@ $(document).ready(function() {
 var styles = {
   mule: {},
   getUrlVars: function() {
-    var vars = [], hash;
+    var vars = [],
+      hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
     for (var i = 0; i < hashes.length; i++) {
       hash = hashes[i].split('=');
@@ -48,17 +49,7 @@ var styles = {
 
 
 
-//////////////////////////////////////////////////////////
-//////////////////       LEAFLET     /////////////////////
-//////////////////////////////////////////////////////////
-var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-  attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
-  maxZoom: 18,
-  id: 'shiftyshofner.okh88o37',
-  accessToken: 'pk.eyJ1Ijoic2hpZnR5c2hvZm5lciIsImEiOiJjaW95amQ2eGowMXZudWZtNGh1dnZ0Z3F3In0.hsRaBxa8sODVT3Sl50E6cQ'
-}).addTo(mymap);
 
 //////////////////////////////////////////////////////////
 ///////////////////////    d3     ////////////////////////
@@ -136,3 +127,17 @@ vis.append('svg:path')
   .attr('stroke', 'blue')
   .attr('stroke-width', 2)
   .attr('fill', 'none');
+
+
+
+//////////////////////////////////////////////////////////
+//////////////////       LEAFLET     /////////////////////
+//////////////////////////////////////////////////////////
+var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+  attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://mapbox.com">Mapbox</a>',
+  maxZoom: 18,
+  id: 'shiftyshofner.okh88o37',
+  accessToken: 'pk.eyJ1Ijoic2hpZnR5c2hvZm5lciIsImEiOiJjaW95amQ2eGowMXZudWZtNGh1dnZ0Z3F3In0.hsRaBxa8sODVT3Sl50E6cQ'
+}).addTo(mymap);
